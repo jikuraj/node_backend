@@ -27,7 +27,7 @@ const userSchema=new Schema(
         type:String, // take string from cloudnary
         required:true
       },
-      covarImage:{
+      coverImage:{
         type:String, // take string from cloudnary
       },
       watchHistory:[{
