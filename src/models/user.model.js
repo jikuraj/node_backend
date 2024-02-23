@@ -73,7 +73,7 @@ userSchema.methods.generateAccessToken=function(){
     )
 }
 
-userSchema.refreshAccessToken=function(){
+userSchema.methods.refreshAccessToken=function(){
     return jwt.sign(
         {
             _id:this._id

@@ -1,6 +1,7 @@
 import {Router} from 'express'
-import { registerUser } from '../controllers/user.controller.js'
+import { registerUser, userLogedOut, userLogin } from '../controllers/user.controller.js'
 import {upload} from "../midalwares/multer.middalware.js"
+import { authenticationUser } from '../midalwares/auth.middleware.js'
 
 
 
@@ -19,6 +20,8 @@ router.route("/register").post(
     ]),
     registerUser
     )
+router.route("/login").post(userLogin)
+router.route("/logout").post(authenticationUser,userLogedOut)
 
 
 export {
